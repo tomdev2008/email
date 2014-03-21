@@ -1,0 +1,92 @@
+<!DOCTYPE >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Email </title>
+<!-- The styles -->
+<link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
+
+  <link href="css/flat-ui.css" rel="stylesheet">
+    <link href="css/demo.css" rel="stylesheet">
+<style type="text/css">
+body {
+	padding-bottom: 40px;
+}
+
+.sidebar-nav {
+	padding: 9px 0;
+}
+</style>
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href='css/uniform.default.css' rel='stylesheet'>
+<link href='css/colorbox.css' rel='stylesheet'>
+<link href='css/jquery.cleditor.css' rel='stylesheet'>
+<link href='css/opa-icons.css' rel='stylesheet'>
+
+<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- The fav icon -->
+<!--<link rel="shortcut icon" href="img/favicon.ico">-->
+<!--<script type="text/javascript" src="js/jquery.js"></script>-->
+</head>
+<body>
+
+	<div class="row-fluid sortable">
+		<div class="box-content">
+			<table
+				class="table table-striped table-bordered bootstrap-datatable datatable">
+				<thead>
+					<tr>
+						<th>username</th>
+						<th>useForwarding</th>
+						<th>forwarDestination</th>
+						<th>useAlias</th>
+						<th>Operating</th>
+					</tr>
+				</thead>
+				<tbody id="dataTable">
+				 <% for(var i=0; i<users.length; i++) { %>      
+        <tr class="success">
+		     <td  class="center" ><%= users[i]['username'] %></td>
+			 <td  class="center"> <%= users[i]['useForwarding'] %></td>
+			 <td  class="center"> <%= users[i]['forwarDestination'] %></td>
+			 <td  class="center"> <%= users[i]['useAlias'] %></td>
+			 <td  class="center">
+			 <a class="btn btn-danger" href="/deluser?username=<%=users[i]['username']%>">
+			 <i class="icon-trash icon-white"></i>Delete</a>
+			 </td>
+		</tr>
+    <% } %>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</body>
+
+<a class="btn btn-danger"
+			href="/adduser"><i class="icon-edit icon-white"></i>Add User
+		</a></div>
+		
+   <div class="pagination">
+            <ul>
+              <li class="previous"><a href="?pageindex=0"><img src="images/pager/previous.png" /></a></li>
+              <!--class="active"-->
+			  <li ><a href="?pageindex=0">1</a></li>
+              <li><a href="?pageindex=1">2</a></li>
+              <li><a href="?pageindex=2">3</a></li>
+              <li><a href="?pageindex=3">4</a></li>
+              <li><a href="?pageindex=4">5</a></li>
+              <li><a href="?pageindex=5">6</a></li>
+              <li><a href="?pageindex=6">7</a></li>
+              <li><a href="?pageindex=7">8</a></li>
+              <li><a href="?pageindex=8">9</a></li>
+              <li class="next"><a href="#"><img src="images/pager/next.png" /></a></li>
+            </ul>
+          </div>
+<div style="float: right; width: 200px;">
+
+</html>
